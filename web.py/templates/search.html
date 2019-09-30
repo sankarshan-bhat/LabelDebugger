@@ -1,0 +1,32 @@
+{% extends "app_base.html" %}
+{% block content %}
+
+<form method="POST" action="fetchPair" role="form" style="max-width:400px; width:100%">
+	{% if message is defined %}
+	<div class="alert alert-warning" role="alert">{{ message }}</div>
+	{% endif %}
+	<div class="form-group">
+	  <label for="tableA">Please Enter the cDrive path for Table A</label>
+	  <input type="text" class="form-control" id="tableA" name="tableA" />
+	</div>
+	<div class="form-group">
+	  <label for="tableB">Please Enter the cDrive path for Table B</label>
+	  <input type="text" class="form-control" id="tableB" name="tableB" />
+	</div>
+	<div class="form-group">
+	  <label for="labelledPairs">Please Enter the cDrive path for labeled pairs</label>
+	  <input type="text" class="form-control" id="labelledPairs" name="labelledPairs" />
+	</div>
+	<div class="form-group">
+	  <label for="topK">Please Enter number of Suspicious Pairs to be generated</label>
+	  <input type="text" class="form-control" id="topK" name="topK" />
+	</div>
+	<div class="form-group">
+	  <label for="outputFile">Please Enter the cDrive path for the output file</label>
+	  <input type="text" class="form-control" id="outputFile" name="outputFile" />
+	</div>
+	<div><input type="submit" value="Generate Suspicious Pairs!" class="btn btn-primary" /></div>
+</form>
+
+
+{% endblock %}
